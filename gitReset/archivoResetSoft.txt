@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Linea de codigo 1
 
 Linea de Codigo 2
+=======
+Linea de codigo 1
+>>>>>>> dde39af2042425179302337e7e886d8b16580cb5
