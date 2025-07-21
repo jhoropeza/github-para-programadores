@@ -1,0 +1,47 @@
+sentencia git
+
+Agrupa todos los cambios en único commit. Bueno hacer el uncommit de varios commits. 
+Verificando que no haya conflictos, primero
+
+-- Comandos para detectar conflictos
+git status Muestra si hay archivos en conflicto:
+
+bash
+git status
+Si ves algo como Unmerged paths o both modified, significa que hay conflictos.
+
+git diff --name-only --diff-filter=U Lista solo los archivos en conflicto:
+
+bash
+git diff --name-only --diff-filter=U
+
+git ls-files -u Muestra detalles de los archivos en conflicto:
+
+bash
+git ls-files -u
+🧠 ¿Cómo se ven los conflictos en los archivos?
+Git marca los conflictos directamente en el contenido del archivo:
+
+text
+<<<<<<< HEAD
+Tu versión local
+=======
+Versión de la rama que estás fusionando
+>>>>>>> rama-remota
+Tú decides qué líneas conservar, eliminas los marcadores (<<<<<<<, =======, >>>>>>>) y luego haces:
+
+git add <archivo>
+git commit -m "Conflicto resuelto en <archivo>"
+
+
+bash
+
+git revert --no-commit <commit1>
+git revert --no-commit <commit2>
+git revert --no-commit <commit3>
+# ... sigue según necesites
+git commit -m "Revertir múltiples cambios juntos"
+
+git push origin main/master
+
+
