@@ -1,8 +1,0 @@
-🧭 ¿Para qué sirve?
-✅ Revertir cambios de forma segura sin alterar el historial anterior.
-
-💬 Ideal para proyectos colaborativos, ya que mantiene la trazabilidad de lo que fue revertido y por qué.
-
-🧑‍🤝‍🧑 Evita conflictos con otros colaboradores, porque no sobrescribe commits anteriores (como lo hace reset).
-
-git revert <id del commit>
