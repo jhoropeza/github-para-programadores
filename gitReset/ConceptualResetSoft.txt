@@ -1,16 +1,29 @@
+git pull
+git status
+git log --oneline  --> Identificar el id donde quieres buscarlos.
+
+** Cuando se bajan a staged ... se puede cambiar el nombre del commit y juntarlos en un unico commit y volver a subirlos
+
+** So se quiere realizar el unstaged entero hasta local/working directory. Lo mejor es preferible hacer el de uno solo a la posición
+** anterior porque en remoto solo se quita el ultimo commit.. con lo cual se mantienen todos los cambios aunque en staged tengas todos los commits
+** en colo verde realizados.
+
+--- ¿ Como se aplica ?
+
 git reset --soft <id del commit>  
 
     llevan el head a la posición deseada retrocediendo todos los commit al staging
 
     despues si los quieres cambiar es necesario colocarlos en el área de trabajo, a conitnuacion como se cambia
 
-git restore --staged <archvo.txt>  --> los lleva al archivo de trabajo
+git restore --staged <archvo.txt>  --> los lleva al working directory
 
-    te obliga a hacer git pull --> resuelven los conflictos por ejemplo accept incomming changes
+    te obliga a hacer git pull si quieres mantener o modificar cambios --> resuelven los conflictos por ejemplo accept incomming changes, si los hay
     luego 
     git add <archivo.txt>
     git commit -m "comentario del cambio"
     git push
 
-git restore <archivo.txt> ---> retroce los cambios que hayas hecho al inicio
+git restore <archivo.txt> ---> retroce los cambios que hayas hecho hasta el inicio/quita todos los commits. Ya no puedes hacer modificaciones de
+                               los cambios realizados
 
