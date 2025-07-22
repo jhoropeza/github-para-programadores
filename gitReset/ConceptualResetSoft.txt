@@ -1,0 +1,16 @@
+git reset --soft <id del commit>  
+
+    llevan el head a la posición deseada retrocediendo todos los commit al staging
+
+    despues si los quieres cambiar es necesario colocarlos en el área de trabajo, a conitnuacion como se cambia
+
+git restore --staged <archvo.txt>  --> los lleva al archivo de trabajo
+
+    te obliga a hacer git pull --> resuelven los conflictos por ejemplo accept incomming changes
+    luego 
+    git add <archivo.txt>
+    git commit -m "comentario del cambio"
+    git push
+
+git restore <archivo.txt> ---> retroce los cambios que hayas hecho al inicio
+
