@@ -1,0 +1,27 @@
+1. Traer todo el estado de ese commit a tu carpeta (sobrescribiendo todo localmente):
+
+git fetch origin
+git reset --hard bc2a5e5
+
+Esto dejará tu repositorio local exactamente igual que en ese commit bc2a5e5.
+
+Pero como será diferente de tu rama HEAD de remoto debes hacer:
+git push origin master --force
+
+IMPORTANTE: Perderás cualquier cambio local no guardado.
+
+2. Si quieres solo traer los archivos de ese commit pero sin cambiar la rama actual ni perder cambios:
+Puedes crear una rama temporal en ese commit:
+
+git checkout -b temporal bc2a5e5
+Ahora tienes una rama llamada temporal en ese commit con todos los archivos.
+
+Si quieres copiar algún archivo específico a tu rama actual, vuelve a tu rama principal:
+
+git checkout main
+y copia el archivo desde la rama temporal así:
+
+git checkout temporal -- ruta/del/archivo
+Después puedes borrar la rama temporal:
+
+git branch -D temporal
