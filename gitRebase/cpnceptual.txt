@@ -1,0 +1,17 @@
+r reword y f fixed
+
+USO DEL REBASE PARA ENGLOBAR VARIOS COMMITS EN UNO Y QUE PARTAN DESDE UNO BASE
+
+1. git rebase -i <no commit> es decir del base
+
+2. cuando salen en pantall el primer commit se le pone r en sustitucion de pick
+
+3. al resto f en sustitución de pick
+
+4. control S y cerrar
+
+5. Te pide el mensaje del commit
+
+6. git rebase --continue
+
+7. git push --force-with-lease
