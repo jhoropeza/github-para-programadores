@@ -2,7 +2,8 @@ r reword y f fixed
 
 USO DEL REBASE PARA ENGLOBAR VARIOS COMMITS EN UNO Y QUE PARTAN DESDE UNA BASE
 
-1. git rebase -i <no commit> es decir del base
+1. git rebase -i <no commit> es decir del base (El base no se va a cambiar)
+Git no muestra el commit base, sino los commits posteriores a ese.
 
 2. cuando salen en pantall el primer commit se le pone r en sustitucion de pick
 
