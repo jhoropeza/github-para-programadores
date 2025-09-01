@@ -44,4 +44,25 @@ git commit -m "Revertir múltiples cambios juntos"
 
 git push origin main/master
 
+---Para revertir un numero de commits digamos los ultimos tres (Crea un Nuevo commit y deja la historia)
+git revert --no-commit HEAD~3..
+git commit -m "Revirtiendo los últimos 3 commits"
+git push
 
+
+Enfoque	¿Qué hace?	Ventajas	Consideraciones
+git revert --no-commit <commit1> (uno por uno)	Reviertes commits específicos, en el orden que tú defines.	            Control total sobre qué revertir y en qué orden.	Más manual, puede generar conflictos si el orden no es correcto.
+git revert --no-commit HEAD~3..HEAD	                Reviertes un rango de commits consecutivos, desde HEAD~3 hasta HEAD.	Más rápido, útil para revertir los últimos N commits.	El orden es automático (de más antiguo a más reciente), y no puedes omitir commits intermedios.
+HEAD~2
+HEAD~1
+HEAD
+
+--- Recuerda
+A..B significa: todos los commits que están en B y no en A.
+
+git revert -n HEAD~3.. es equivalente a git revert -n HEAD~3..HEAD.
+
+Usar -n te deja los cambios aplicados en el working tree sin hacer commit.
+
+Siempre revierte en orden inverso si los commits son dependientes.
+git revert -n $(git rev-list HEAD~3..HEAD)
